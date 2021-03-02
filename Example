@@ -1,0 +1,136 @@
+
+public class LinkedListExample{
+    Node head;
+    
+    public static class Node{
+        
+        int  data;
+        Node next;
+        
+        Node(int data){
+            this.data = data;
+        }
+        
+        
+    }
+    
+    public void lastToFront(){
+        Node last = head;
+        Node prev = null;
+        while(last.next!=node){
+            prev = last;
+            last = last.next;
+        }
+        
+        prev.next = null;
+        last.next = head;
+        head = last;
+    }
+    
+    public void middleOfLink(){
+        Node temp = head;
+        int count = 0, middle=0, count2=0;
+        while(temp!=null){
+            count++;
+            temp = temp.next;
+        }
+        
+        middle = count/2+1;
+        Node temp2 = head;
+        
+        while(count2!=middle){
+            temp2 = temp2.next;
+            count2++;
+        }
+        
+        return temp2.data;
+        
+    }
+    
+    public void NthofBack(int position){
+        Node temp = head;
+        int count = 0, count2=1;
+        while(temp!=null){
+            count++;
+            temp = temp.next;
+        }
+        
+        int finalPosition = (count - position) + 1;
+        
+        Node temp2 = head;
+        while(count2 != finalPosition){
+            temp2 = temp2.next;
+            count++;
+        }
+        
+        return temp2.data;
+    }
+    
+    public void getN(int position){
+        Node temp = head;
+        int count = 0;
+        
+        if(position == 0)
+            return temp.data;
+        while(temp!=null && count!=position){
+            count++;
+            temp = temp.next;
+        }
+        
+        if(temp == null)
+        return;
+        
+        return temp.data;
+    }
+   
+    public void remove(int position){
+      Node temp = head;
+      Node prev = null;
+      int count = 0;
+      
+      if(position == 0)
+        head = temp.next;
+        
+        while(count != position && temp!=null){
+            prev = temp;
+            temp = temp.next;
+            count++;
+        }
+        
+         if (head == null) 
+            return; 
+            
+        if(temp == null)
+            return;
+            
+        prev.next = temp.next;
+      
+    }
+    
+    public void allocate(int d){
+        Node newNode = new Node(d);
+        newNode.next = null;
+        
+        if(head == null)
+            head = new Node(d)
+        
+        Node last = head;
+        while(last.next != null){
+            last = last.next;
+        }
+        
+        last.next = newNode;
+        
+    }
+    
+    public void printList(){
+        Node n = head;
+        
+        while(n!=null){
+            System.out.println(n.data + " ");
+            n = n.next;}
+    }
+    
+
+    
+}
